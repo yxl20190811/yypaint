@@ -41,6 +41,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>../../output</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -51,6 +52,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../src;../../include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -124,6 +126,11 @@
     <None Include="yypaint.reg" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\include\ICell.h" />
+    <ClInclude Include="..\..\include\IGraph.h" />
+    <ClInclude Include="..\..\include\ITool.h" />
+    <ClInclude Include="..\..\src\TGraph.h" />
+    <ClInclude Include="..\..\src\TLoadDll.h" />
     <ClInclude Include="ChildFrm.h" />
     <ClInclude Include="ClassView.h" />
     <ClInclude Include="FileView.h" />
@@ -139,6 +146,8 @@
     <ClInclude Include="yypaintView.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\src\TGraph.cpp" />
+    <ClCompile Include="..\..\src\TLoadDll.cpp" />
     <ClCompile Include="ChildFrm.cpp" />
     <ClCompile Include="ClassView.cpp" />
     <ClCompile Include="FileView.cpp" />
