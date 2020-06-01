@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="GUI">
+      <UniqueIdentifier>{47fc6b53-dc48-40a7-8fbd-5d37f29854d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{3315b7d0-596d-4170-b0fb-1248bb51a0b1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="res\Tool_Rectangle.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Tool_Rectangle.def">
+      <Filter>GUI</Filter>
+    </None>
+    <None Include="icon1.ico">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Tool_Rectangle.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="TTool_Rectangle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Tool_Rectangle.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ICell.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\IGraph.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ITool.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="TTool_Rectangle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Tool_Rectangle.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
