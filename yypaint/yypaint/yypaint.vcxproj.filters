@@ -104,19 +104,10 @@
     <ClInclude Include="yypaintView.h">
       <Filter>gui</Filter>
     </ClInclude>
-    <ClInclude Include="ClassView.h">
-      <Filter>gui</Filter>
-    </ClInclude>
     <ClInclude Include="FileView.h">
       <Filter>gui</Filter>
     </ClInclude>
     <ClInclude Include="MainFrm.h">
-      <Filter>gui</Filter>
-    </ClInclude>
-    <ClInclude Include="OutputWnd.h">
-      <Filter>gui</Filter>
-    </ClInclude>
-    <ClInclude Include="PropertiesWnd.h">
       <Filter>gui</Filter>
     </ClInclude>
     <ClInclude Include="Resource.h">
@@ -160,19 +151,10 @@
     <ClCompile Include="yypaintView.cpp">
       <Filter>gui</Filter>
     </ClCompile>
-    <ClCompile Include="ClassView.cpp">
-      <Filter>gui</Filter>
-    </ClCompile>
     <ClCompile Include="FileView.cpp">
       <Filter>gui</Filter>
     </ClCompile>
     <ClCompile Include="MainFrm.cpp">
-      <Filter>gui</Filter>
-    </ClCompile>
-    <ClCompile Include="OutputWnd.cpp">
-      <Filter>gui</Filter>
-    </ClCompile>
-    <ClCompile Include="PropertiesWnd.cpp">
       <Filter>gui</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
