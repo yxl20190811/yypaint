@@ -132,7 +132,7 @@
     <ClInclude Include="..\src\TGraph.h" />
     <ClInclude Include="..\src\TLoadDll.h" />
     <ClInclude Include="ChildFrm.h" />
-    <ClInclude Include="FileView.h" />
+    <ClInclude Include="ToolBarView.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
@@ -147,7 +147,7 @@
     <ClCompile Include="..\src\TGraph.cpp" />
     <ClCompile Include="..\src\TLoadDll.cpp" />
     <ClCompile Include="ChildFrm.cpp" />
-    <ClCompile Include="FileView.cpp" />
+    <ClCompile Include="ToolBarView.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

@@ -1,4 +1,4 @@
-﻿生成启动时间为 2020/6/2 6:58:19。
+﻿生成启动时间为 2020/6/2 7:07:42。
      1>项目“C:\git\yypaint\yypaint\yypaint\yypaint.vcxproj”在节点 2 上(rebuild 个目标)。
      1>_PrepareForClean:
          正在删除文件“Debug\yypaint.lastbuildstate”。
@@ -8,14 +8,15 @@
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../../include /I../src /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\yypaint.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
          stdafx.cpp
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../../include /I../src /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\yypaint.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\src\TGraph.cpp ..\src\TLoadDll.cpp ChildFrm.cpp FileView.cpp MainFrm.cpp TToolbar.cpp ViewTree.cpp yypaint.cpp yypaintDoc.cpp yypaintView.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../../include /I../src /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\yypaint.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\src\TGraph.cpp ..\src\TLoadDll.cpp ChildFrm.cpp ToolBarView.cpp MainFrm.cpp TToolbar.cpp ViewTree.cpp yypaint.cpp yypaintDoc.cpp yypaintView.cpp
          yypaintView.cpp
          yypaintDoc.cpp
          yypaint.cpp
          ViewTree.cpp
          TToolbar.cpp
          MainFrm.cpp
-         FileView.cpp
+     1>c:\git\yypaint\yypaint\yypaint\mainfrm.cpp(192): warning C4101: “bNameValid”: 未引用的局部变量
+         ToolBarView.cpp
          ChildFrm.cpp
          TLoadDll.cpp
      1>c:\git\yypaint\yypaint\src\tloaddll.cpp(20): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
@@ -36,7 +37,7 @@
          Debug\TGraph.obj
          Debug\TLoadDll.obj
          Debug\ChildFrm.obj
-         Debug\FileView.obj
+         Debug\ToolBarView.obj
          Debug\MainFrm.obj
          Debug\stdafx.obj
          Debug\TToolbar.obj
@@ -54,7 +55,7 @@
          Debug\TGraph.obj
          Debug\TLoadDll.obj
          Debug\ChildFrm.obj
-         Debug\FileView.obj
+         Debug\ToolBarView.obj
          Debug\MainFrm.obj
          Debug\stdafx.obj
          Debug\TToolbar.obj
@@ -70,4 +71,4 @@
 
 生成成功。
 
-已用时间 00:00:05.18
+已用时间 00:00:05.65

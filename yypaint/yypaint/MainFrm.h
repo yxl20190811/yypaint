@@ -3,7 +3,7 @@
 //
 
 #pragma once
-#include "FileView.h"
+#include "ToolBarView.h"
 
 
 class CMainFrame : public CMDIFrameWndEx
@@ -36,7 +36,7 @@ protected:  // 控件条嵌入成员
 	CMFCToolBar       m_wndToolBar;
 	CMFCStatusBar     m_wndStatusBar;
 	CMFCToolBarImages m_UserImages;
-	CFileView         m_wndFileView;
+	CToolBarView         m_ToolBarView;
 
 // 生成的消息映射函数
 protected:

@@ -119,9 +119,9 @@ int CMainFrame::OnCreate(LPCREATESTRUCT lpCreateStruct)
 		return -1;
 	}
 
-	m_wndFileView.EnableDocking(CBRS_ALIGN_ANY);
+	m_ToolBarView.EnableDocking(CBRS_ALIGN_ANY);
 	
-	DockPane(&m_wndFileView);
+	DockPane(&m_ToolBarView);
 	CDockablePane* pTabbedBar = NULL;
 	
 	
@@ -192,12 +192,9 @@ BOOL CMainFrame::CreateDockingWindows()
 	BOOL bNameValid;
 
 	// 创建文件视图
-	CString strFileView;
-	bNameValid = strFileView.LoadString(IDS_FILE_VIEW);
-	ASSERT(bNameValid);
-	if (!m_wndFileView.Create(strFileView, this, CRect(0, 0, 200, 200), TRUE, ID_VIEW_FILEVIEW, WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | CBRS_LEFT| CBRS_FLOAT_MULTI))
+	if (!m_ToolBarView.Create("图元", this, CRect(0, 0, 200, 200), TRUE, ID_VIEW_FILEVIEW, WS_CHILD | WS_VISIBLE | WS_CLIPSIBLINGS | WS_CLIPCHILDREN | CBRS_LEFT| CBRS_FLOAT_MULTI))
 	{
-		TRACE0("未能创建“文件视图”窗口\n");
+		TRACE0("未能创建“图元视图”窗口\n");
 		return FALSE; // 未能创建
 	}
 
@@ -208,7 +205,7 @@ BOOL CMainFrame::CreateDockingWindows()
 void CMainFrame::SetDockingWindowIcons(BOOL bHiColorIcons)
 {
 	HICON hFileViewIcon = (HICON) ::LoadImage(::AfxGetResourceHandle(), MAKEINTRESOURCE(bHiColorIcons ? IDI_FILE_VIEW_HC : IDI_FILE_VIEW), IMAGE_ICON, ::GetSystemMetrics(SM_CXSMICON), ::GetSystemMetrics(SM_CYSMICON), 0);
-	m_wndFileView.SetIcon(hFileViewIcon, FALSE);
+	m_ToolBarView.SetIcon(hFileViewIcon, FALSE);
 
 	
 

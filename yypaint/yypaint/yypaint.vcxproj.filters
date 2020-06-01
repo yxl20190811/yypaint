@@ -104,9 +104,6 @@
     <ClInclude Include="yypaintView.h">
       <Filter>gui</Filter>
     </ClInclude>
-    <ClInclude Include="FileView.h">
-      <Filter>gui</Filter>
-    </ClInclude>
     <ClInclude Include="MainFrm.h">
       <Filter>gui</Filter>
     </ClInclude>
@@ -144,15 +141,15 @@
     <ClInclude Include="..\src\TLoadDll.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="ToolBarView.h">
+      <Filter>gui</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ChildFrm.cpp">
       <Filter>gui</Filter>
     </ClCompile>
     <ClCompile Include="yypaintView.cpp">
-      <Filter>gui</Filter>
-    </ClCompile>
-    <ClCompile Include="FileView.cpp">
       <Filter>gui</Filter>
     </ClCompile>
     <ClCompile Include="MainFrm.cpp">
@@ -176,6 +173,9 @@
     </ClCompile>
     <ClCompile Include="..\src\TLoadDll.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="ToolBarView.cpp">
+      <Filter>gui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
