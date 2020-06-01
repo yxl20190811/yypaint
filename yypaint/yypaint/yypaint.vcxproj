@@ -52,7 +52,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../../src;../../include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../include;../src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -129,22 +129,23 @@
     <ClInclude Include="..\..\include\ICell.h" />
     <ClInclude Include="..\..\include\IGraph.h" />
     <ClInclude Include="..\..\include\ITool.h" />
-    <ClInclude Include="..\..\src\TGraph.h" />
-    <ClInclude Include="..\..\src\TLoadDll.h" />
+    <ClInclude Include="..\src\TGraph.h" />
+    <ClInclude Include="..\src\TLoadDll.h" />
     <ClInclude Include="ChildFrm.h" />
     <ClInclude Include="FileView.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TToolbar.h" />
     <ClInclude Include="ViewTree.h" />
     <ClInclude Include="yypaint.h" />
     <ClInclude Include="yypaintDoc.h" />
     <ClInclude Include="yypaintView.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\src\TGraph.cpp" />
-    <ClCompile Include="..\..\src\TLoadDll.cpp" />
+    <ClCompile Include="..\src\TGraph.cpp" />
+    <ClCompile Include="..\src\TLoadDll.cpp" />
     <ClCompile Include="ChildFrm.cpp" />
     <ClCompile Include="FileView.cpp" />
     <ClCompile Include="MainFrm.cpp" />
@@ -152,6 +153,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="TToolbar.cpp" />
     <ClCompile Include="ViewTree.cpp" />
     <ClCompile Include="yypaint.cpp" />
     <ClCompile Include="yypaintDoc.cpp" />

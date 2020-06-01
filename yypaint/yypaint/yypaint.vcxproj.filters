@@ -137,10 +137,11 @@
     <ClInclude Include="..\..\include\ITool.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\TGraph.h">
+    <ClInclude Include="TToolbar.h" />
+    <ClInclude Include="..\src\TGraph.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\src\TLoadDll.h">
+    <ClInclude Include="..\src\TLoadDll.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
@@ -169,10 +170,11 @@
     <ClCompile Include="yypaintDoc.cpp">
       <Filter>gui</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\TGraph.cpp">
+    <ClCompile Include="TToolbar.cpp" />
+    <ClCompile Include="..\src\TGraph.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\src\TLoadDll.cpp">
+    <ClCompile Include="..\src\TLoadDll.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
