@@ -23,6 +23,9 @@
     <None Include="icon1.ico">
       <Filter>资源文件</Filter>
     </None>
+    <None Include="cursor1.cur">
+      <Filter>资源文件</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -32,6 +35,7 @@
       <Filter>GUI</Filter>
     </ClCompile>
     <ClCompile Include="TTool_Rectangle.cpp" />
+    <ClCompile Include="TCell_Rectangle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Resource.h">
@@ -56,6 +60,7 @@
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="TTool_Rectangle.h" />
+    <ClInclude Include="TCell_Rectangle.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Tool_Rectangle.rc">
