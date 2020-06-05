@@ -14,6 +14,9 @@
     <Filter Include="include">
       <UniqueIdentifier>{4071914a-85b4-4dd6-b277-bedc33952c3b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="other">
+      <UniqueIdentifier>{b7c86620-461f-4ef0-a0d2-3343cca3c6aa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt" />
@@ -134,7 +137,6 @@
     <ClInclude Include="..\..\include\ITool.h">
       <Filter>include</Filter>
     </ClInclude>
-    <ClInclude Include="TToolbar.h" />
     <ClInclude Include="..\src\TGraph.h">
       <Filter>src</Filter>
     </ClInclude>
@@ -143,6 +145,12 @@
     </ClInclude>
     <ClInclude Include="ToolBarView.h">
       <Filter>gui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TToolbar.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\TMyView.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -167,7 +175,6 @@
     <ClCompile Include="yypaintDoc.cpp">
       <Filter>gui</Filter>
     </ClCompile>
-    <ClCompile Include="TToolbar.cpp" />
     <ClCompile Include="..\src\TGraph.cpp">
       <Filter>src</Filter>
     </ClCompile>
@@ -176,6 +183,21 @@
     </ClCompile>
     <ClCompile Include="ToolBarView.cpp">
       <Filter>gui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TToolbar.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\TMyView.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Tool_Rectangle\Tool_Rectangle\TCell_Rectangle.cpp">
+      <Filter>other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Tool_Rectangle\Tool_Rectangle\Tool_Rectangle.cpp">
+      <Filter>other</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Tool_Rectangle\Tool_Rectangle\TTool_Rectangle.cpp">
+      <Filter>other</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

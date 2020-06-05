@@ -28,6 +28,8 @@ BEGIN_MESSAGE_MAP(CyypaintView, CView)
 	ON_COMMAND(ID_FILE_PRINT_PREVIEW, &CyypaintView::OnFilePrintPreview)
 	ON_WM_CONTEXTMENU()
 	ON_WM_RBUTTONUP()
+    ON_COMMAND_RANGE(0x0400, 0x0400+100,&CyypaintView::OnCommd)
+    ON_UPDATE_COMMAND_UI_RANGE(0x0400, 0x0400+100,&CyypaintView::OnUpdateCommd)
 END_MESSAGE_MAP()
 
 // CyypaintView 构造/析构
@@ -35,7 +37,7 @@ END_MESSAGE_MAP()
 CyypaintView::CyypaintView()
 {
 	// TODO: 在此处添加构造代码
-
+    m_view.SetWnd(this);
 }
 
 CyypaintView::~CyypaintView()
@@ -125,3 +127,25 @@ CyypaintDoc* CyypaintView::GetDocument() const // 非调试版本是内联的
 
 
 // CyypaintView 消息处理程序
+
+
+
+
+void CyypaintView::OnCommd(UINT  id)
+{   
+    m_view.WindowProc(WM_COMMAND, id, 0);
+}
+void CyypaintView::OnUpdateCommd(CCmdUI* p)
+{
+    m_view.WindowProc(WM_COMMAND, (DWORD)p, CN_UPDATE_COMMAND_UI);
+}
+
+LRESULT CyypaintView::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
+{
+    // TODO: 在此添加专用代码和/或调用基类
+    if(TRUE == m_view.WindowProc(message, wParam, lParam))
+    {
+        return TRUE;
+    }
+    return CView::WindowProc(message, wParam, lParam);
+}

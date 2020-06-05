@@ -52,7 +52,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../../include;../src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./;../../include;../src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -131,21 +131,33 @@
     <ClInclude Include="..\..\include\ITool.h" />
     <ClInclude Include="..\src\TGraph.h" />
     <ClInclude Include="..\src\TLoadDll.h" />
+    <ClInclude Include="..\src\TMyView.h" />
+    <ClInclude Include="..\src\TToolbar.h" />
     <ClInclude Include="ChildFrm.h" />
     <ClInclude Include="ToolBarView.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
-    <ClInclude Include="TToolbar.h" />
     <ClInclude Include="ViewTree.h" />
     <ClInclude Include="yypaint.h" />
     <ClInclude Include="yypaintDoc.h" />
     <ClInclude Include="yypaintView.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Tool_Rectangle\Tool_Rectangle\TCell_Rectangle.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\Tool_Rectangle\Tool_Rectangle\Tool_Rectangle.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\..\Tool_Rectangle\Tool_Rectangle\TTool_Rectangle.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="..\src\TGraph.cpp" />
     <ClCompile Include="..\src\TLoadDll.cpp" />
+    <ClCompile Include="..\src\TMyView.cpp" />
+    <ClCompile Include="..\src\TToolbar.cpp" />
     <ClCompile Include="ChildFrm.cpp" />
     <ClCompile Include="ToolBarView.cpp" />
     <ClCompile Include="MainFrm.cpp" />
@@ -153,7 +165,6 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="TToolbar.cpp" />
     <ClCompile Include="ViewTree.cpp" />
     <ClCompile Include="yypaint.cpp" />
     <ClCompile Include="yypaintDoc.cpp" />
@@ -165,4 +176,9 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="yypaint.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
 </Project>

@@ -6,7 +6,10 @@ class ITool;
 
 class TLoadDll
 {
-public:
+    friend class TLoad;
+    friend class TToolbar;
+    friend class TMyView;
+protected:
     static map<int, ITool*> m_MsgId2Tool;
     static map<string, ITool*> m_Uuid2Tool;
 };
