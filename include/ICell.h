@@ -1,4 +1,18 @@
 #pragma once
+enum
+{
+    HOT_LEFT_TOP = 1,
+    HOT_TOP_CENTER,
+    HOT_RIGHT_TOP,
+    HOT_RIGHT_CENTER,
+    HOT_RIGHT_BOTTOM,
+    HOT_BOTTOM_CENTER,
+    HOT_LEFT_BOTTOM,
+    HOT_LEFT_CENTER,
+    
+    HOT_ROTALE
+};
+
 class ICell
 {
 public:
@@ -18,7 +32,7 @@ public:
     virtual bool InnerTest(int x1, int y1, int x2, int y2){return false;};
 public:
     virtual void PreDragingCell(int type){};
-    virtual void DragingCell(int x, int y, int type){};
+    virtual void DragingCell(int oldX, int oldY, int x, int y, int type){};
     virtual void CancelDragingCell(int type){};
 private:
     int m_order;

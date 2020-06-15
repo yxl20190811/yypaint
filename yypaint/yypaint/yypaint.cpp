@@ -11,6 +11,10 @@
 #include "ChildFrm.h"
 #include "yypaintDoc.h"
 #include "yypaintView.h"
+#pragma comment( lib, "gdiplus.lib" )
+#include "gdiplus.h"
+using namespace Gdiplus;
+
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -150,6 +154,10 @@ BOOL CyypaintApp::InitInstance()
 	pMainFrame->ShowWindow(m_nCmdShow);
 	pMainFrame->UpdateWindow();
 
+
+    GdiplusStartupInput gdiplusStartupInput;
+    GdiplusStartup(&m_gdiplusToken, &gdiplusStartupInput, NULL);
+
 	return TRUE;
 }
 
@@ -157,7 +165,7 @@ int CyypaintApp::ExitInstance()
 {
 	//TODO: 处理可能已添加的附加资源
 	AfxOleTerm(FALSE);
-
+    GdiplusShutdown(m_gdiplusToken);
 	return CWinAppEx::ExitInstance();
 }
 

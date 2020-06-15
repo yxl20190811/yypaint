@@ -19,6 +19,7 @@ class CyypaintApp : public CWinAppEx
 public:
 	CyypaintApp();
 
+    ULONG m_gdiplusToken;
 
 // ÖØÐ´
 public:

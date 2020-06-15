@@ -77,6 +77,10 @@ public:
             filenameSet.end() != it; ++it)
         {
             ITool* tool = load(it->c_str());
+            if(NULL== tool)
+            {
+                continue;
+            }
             tool->SetMsgId(MsgId);
             TLoadDll::m_Uuid2Tool[tool->GetUuid()] = tool;
             TLoadDll::m_MsgId2Tool[MsgId] = tool;

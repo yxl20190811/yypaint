@@ -59,7 +59,7 @@ void TGraph::RealonPaint(CDC& dc)
     {
         (*it)->OnPaint(dc);
     }
-    for(TCellLst::iterator it =  m_SelectLst.begin();
+    for(TCellSet::iterator it =  m_SelectLst.begin();
         m_SelectLst.end() != it; ++it)
     {
         (*it)->OnPaintSelect(dc);
@@ -82,26 +82,95 @@ void TGraph::OnPaint()
     ::GetWindowRect(m_wnd->GetSafeHwnd(), rect);
     dc.BitBlt(0,0,rect.right-rect.left,rect.bottom-rect.top,&m_MemDC,0,0,SRCCOPY);
 }
+
+void TGraph::InsertSelectSet(ICell* cell)
+{
+    m_SelectLst.insert(cell);
+}
+void TGraph::ClearSelectSet()
+{
+    m_SelectLst.clear();
+}
+void TGraph::EraseSelectSet(ICell* cell)
+{
+    m_SelectLst.erase(cell);
+}
+ICell* TGraph::GetOnlySelectCell()
+{
+    if(1 != m_SelectLst.size())
+    {
+        return NULL;
+    }
+    return *(m_SelectLst.begin());
+}
+
+
 ICell* TGraph::OverTest(int x, int y)
 {
+    for(TCellLst::iterator it = m_CellList.begin();
+        m_CellList.end() != it; ++it)
+    {
+        if((*it)->OverTest(x, y))
+        {
+            return *it;
+        }
+    }
     return NULL;
 }
 void TGraph::OverHotTest(int x, int y,
         int& type, ICell*& cell, HCURSOR* curor)
 {
+    for(TCellSet::iterator it = m_SelectLst.begin();
+        m_SelectLst.end() != it; ++it)
+    {
+        cell = *it;
+        type = cell->OverHotTest(x, y, curor);
+        if( 0 != type)
+        {
+            return;
+        }
+    }
+    type = 0;
+    cell = 0;
+    curor = 0;
 }
 void TGraph::SelectByRect(int x1, int y1, int x2, int y2)
 {
+    for(TCellLst::iterator it = m_CellList.begin();
+        m_CellList.end() != it; ++it)
+    {
+        if((*it)->InnerTest(x1, y1, x2, y2))
+        {
+            m_SelectLst.insert(*it);
+        }
+    }
 }
 void TGraph::PreDragingSelectCell(int type)
 {
+     for(TCellSet::iterator it = m_SelectLst.begin();
+        m_SelectLst.end() != it; ++it)
+    {
+        (*it)->PreDragingCell(type);
+     }
 }
 void TGraph::CancelDragingSelectCell(int type)
 {
+     for(TCellSet::iterator it = m_SelectLst.begin();
+        m_SelectLst.end() != it; ++it)
+    {
+        (*it)->CancelDragingCell(type);
+     }
 }
-void TGraph::DragingSelectCell(int x, int y, int type)
+
+void TGraph::DragingSelectCell(int oldX, int oldY, int x, int y, int type)
 {
+    for(TCellSet::iterator it = m_SelectLst.begin();
+        m_SelectLst.end() != it; ++it)
+    {
+        (*it)->DragingCell(oldX, oldY, x, y, type);
+     }
 }
+
 void TGraph::SetNewCell(ICell* cell)
 {
     m_curDrawCell = cell;

@@ -1,6 +1,7 @@
 #pragma once
 #include "IGraph.h"
 #include <list>
+#include <set>
 using namespace std;
 
 class TGraph: public IGraph
@@ -20,7 +21,12 @@ public:
     virtual void SelectByRect(int x1, int y1, int x2, int y2);
     virtual void PreDragingSelectCell(int type);
     virtual void CancelDragingSelectCell(int type);
-    virtual void DragingSelectCell(int x, int y, int type);
+    virtual void DragingSelectCell(int oldX, int oldY, int x, int y, int type);
+public:
+    virtual void InsertSelectSet(ICell* cell);
+    virtual void ClearSelectSet();
+    virtual void EraseSelectSet(ICell* cell);
+    ICell* GetOnlySelectCell();
 public:
     virtual ICell* GetNewCell();
     virtual void SetNewCell(ICell* cell);
@@ -28,7 +34,8 @@ public:
 protected:
     typedef  list<ICell*> TCellLst;
     TCellLst m_CellList;
-    TCellLst  m_SelectLst;
+    typedef  set<ICell*> TCellSet;
+    TCellSet  m_SelectLst;
     
     ICell*  m_curDrawCell;
     CWnd*   m_wnd;
@@ -39,5 +46,6 @@ protected:
 private:
     void RealonPaint(CDC& dc);
     void DrawGrid(CDC* pDC);
+
 };
 

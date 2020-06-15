@@ -38,7 +38,7 @@ BOOL TToolbar::Create(CWnd* pwnd)
     {
 	    return -1;      // Î´ÄÜ´´½¨
     }
-    int size = TLoadDll::m_Uuid2Tool.size();
+    int size = TLoadDll::m_MsgId2Tool.size();
     if(size <= 0)
     {
         return -1;
@@ -46,8 +46,8 @@ BOOL TToolbar::Create(CWnd* pwnd)
     
     m_imgs.Create(32, 32, ILC_MASK | ILC_COLOR32, 2, 0);
    
-    for(map<string, ITool*>::iterator it = TLoadDll::m_Uuid2Tool.begin();
-            TLoadDll::m_Uuid2Tool.end() != it; ++it)
+    for(map<int, ITool*>::iterator it = TLoadDll::m_MsgId2Tool.begin();
+            TLoadDll::m_MsgId2Tool.end() != it; ++it)
     {
         m_imgs.Add(it->second->GetIcon());
     }
@@ -57,16 +57,16 @@ BOOL TToolbar::Create(CWnd* pwnd)
     
     UINT* MsgId = new UINT[size+1];
     int pos = 0;
-     for(map<string, ITool*>::iterator it = TLoadDll::m_Uuid2Tool.begin();
-            TLoadDll::m_Uuid2Tool.end() != it; ++it)
+     for(map<int, ITool*>::iterator it = TLoadDll::m_MsgId2Tool.begin();
+            TLoadDll::m_MsgId2Tool.end() != it; ++it, ++pos)
     {
         MsgId[pos] = it->second->GetMsgId();
     }
     this->SetButtons(MsgId, size);
     
     pos = 0;
-    for(map<string, ITool*>::iterator it = TLoadDll::m_Uuid2Tool.begin();
-            TLoadDll::m_Uuid2Tool.end() != it; ++it)
+    for(map<int, ITool*>::iterator it = TLoadDll::m_MsgId2Tool.begin();
+            TLoadDll::m_MsgId2Tool.end() != it; ++it)
     {
         this->SetButtonInfo(pos, MsgId[pos], TBBS_BUTTON, pos);
     }
