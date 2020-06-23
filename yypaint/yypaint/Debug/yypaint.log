@@ -1,12 +1,18 @@
-﻿生成启动时间为 2020/6/23 7:47:12。
+﻿生成启动时间为 2020/6/24 7:23:42。
      1>项目“C:\git\yypaint\yypaint\yypaint\yypaint.vcxproj”在节点 2 上(build 个目标)。
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(299,5): warning MSB8004: Output 目录未以斜杠结尾。此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
      1>InitializeBuildStatus:
          正在创建“Debug\yypaint.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
          所有输出均为最新。
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I./ /I../../include /I../src /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\yypaint.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\src\TGraph.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I./ /I../../include /I../src /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\yypaint.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt ..\src\TGraph.cpp ..\src\TMyView.cpp TUndo_CreateCell.cpp
+         TMyView.cpp
+         正在生成代码...
+         正在编译...
          TGraph.cpp
+         正在生成代码...
+         正在跳过...(未检测到相关更改)
+         TUndo_CreateCell.cpp
        ResourceCompile:
          所有输出均为最新。
        ManifestResourceCompile:
@@ -19,9 +25,13 @@
          Debug\TMyView.obj
          Debug\TToolbar.obj
          Debug\ChildFrm.obj
+         Debug\IUndo.obj
          Debug\ToolBarView.obj
          Debug\MainFrm.obj
          Debug\stdafx.obj
+         Debug\TUndoList.obj
+         Debug\TUndo_CreateCell.obj
+         Debug\TUndo_EndDrag.obj
          Debug\ViewTree.obj
          Debug\yypaint.obj
          Debug\yypaintDoc.obj
@@ -39,4 +49,4 @@
 
 生成成功。
 
-已用时间 00:00:00.81
+已用时间 00:00:01.15

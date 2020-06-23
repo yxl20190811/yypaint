@@ -191,9 +191,9 @@ void TTool_Select::OnLButtonUp(IGraph* graph, int x, int y)
     {
         graph->SelectByRect(m_TmpCell.m_x1, m_TmpCell.m_y1, m_TmpCell.m_x2, m_TmpCell.m_y2);
     }
-    if(m_state == DRAGING_HOT)
+    if(m_state == DRAGING_HOT || m_state == DRAGING_SELCT)
     {
-        //graph->DragingSelectCell(m_StartMoveX, m_StartMoveY, x, y, m_hotType);
+        graph->EndDragingSelectCell(m_StartMoveX, m_StartMoveY, x, y, m_hotType);
     }
     m_curCursor = m_arrowCuror;
     SetCursor(m_curCursor);

@@ -134,11 +134,15 @@
     <ClInclude Include="..\src\TMyView.h" />
     <ClInclude Include="..\src\TToolbar.h" />
     <ClInclude Include="ChildFrm.h" />
+    <ClInclude Include="IUndo.h" />
     <ClInclude Include="ToolBarView.h" />
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="TUndoList.h" />
+    <ClInclude Include="TUndo_CreateCell.h" />
+    <ClInclude Include="TUndo_EndDrag.h" />
     <ClInclude Include="ViewTree.h" />
     <ClInclude Include="yypaint.h" />
     <ClInclude Include="yypaintDoc.h" />
@@ -159,12 +163,16 @@
     <ClCompile Include="..\src\TMyView.cpp" />
     <ClCompile Include="..\src\TToolbar.cpp" />
     <ClCompile Include="ChildFrm.cpp" />
+    <ClCompile Include="IUndo.cpp" />
     <ClCompile Include="ToolBarView.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="TUndoList.cpp" />
+    <ClCompile Include="TUndo_CreateCell.cpp" />
+    <ClCompile Include="TUndo_EndDrag.cpp" />
     <ClCompile Include="ViewTree.cpp" />
     <ClCompile Include="yypaint.cpp" />
     <ClCompile Include="yypaintDoc.cpp" />

@@ -16,6 +16,7 @@ public:
     virtual void PreDragingSelectCell(int type){};
     virtual void CancelDragingSelectCell(int type){};
     virtual void DragingSelectCell(int oldX, int oldY, int x, int y, int type){};
+    virtual void EndDragingSelectCell(int oldX, int oldY, int x, int y, int type){}
 public:
     virtual void InsertSelectSet(ICell* cell){}
     virtual void ClearSelectSet(){}
@@ -25,4 +26,5 @@ public:
     virtual ICell* GetNewCell(){return NULL;}
     virtual void SetNewCell(ICell* cell){};
     virtual void AddNewCell2Graph(ICell* cell){};
+    virtual void EraseCellFromGraph(ICell* cell){};
 };

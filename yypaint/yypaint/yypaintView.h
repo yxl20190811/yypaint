@@ -49,6 +49,8 @@ public:
     afx_msg void OnCommd(UINT  id);
     afx_msg void OnUpdateCommd(CCmdUI* p);
     virtual LRESULT WindowProc(UINT message, WPARAM wParam, LPARAM lParam);
+    afx_msg void OnEditUndo();
+    afx_msg void OnEditRedo();
 };
 
 #ifndef _DEBUG  // yypaintView.cpp 中的调试版本

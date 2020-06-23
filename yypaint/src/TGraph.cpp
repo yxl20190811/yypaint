@@ -3,6 +3,8 @@
 #include "ICell.h"
 #include "TLoadDll.h"
 #include "ITool.h"
+#include "TUndo_CreateCell.h"
+#include "TUndo_EndDrag.h"
 
 TGraph::TGraph()
 {
@@ -192,10 +194,26 @@ void TGraph::SetNewCell(ICell* cell)
 {
     m_curDrawCell = cell;
 }
+
+void TGraph::AddNewCell(ICell* cell)
+{
+    m_CellList.insert(cell);
+    m_curDrawCell = NULL;
+}
+void  TGraph::EraseCell(ICell* cell)
+{
+    m_CellList.erase(cell);
+    m_curDrawCell = NULL;
+}
 void TGraph::AddNewCell2Graph(ICell* cell)
 {
-    m_CellList.push_back(cell);
-    m_curDrawCell = NULL;
+    AddNewCell(cell);
+    AddUndo(new TUndo_CreateCell(cell, true));
+}
+void TGraph::EraseCellFromGraph(ICell* cell)
+{
+    EraseCell(cell);
+    AddUndo(new TUndo_CreateCell(cell, false));
 }
 
 ICell* TGraph::GetNewCell()
@@ -248,4 +266,9 @@ void TGraph::Serialize(CArchive& ar)
         RePaint();
 		// TODO: 在此添加加载代码
 	}
+}
+
+void TGraph::EndDragingSelectCell(int oldX, int oldY, int x, int y, int type)
+{
+    AddUndo(new TUndo_EndDrag(m_SelectLst, oldX, oldY, x, y, type));
 }

@@ -30,6 +30,8 @@ BEGIN_MESSAGE_MAP(CyypaintView, CView)
 	ON_WM_RBUTTONUP()
     ON_COMMAND_RANGE(0x0400, 0x0400+100,&CyypaintView::OnCommd)
     ON_UPDATE_COMMAND_UI_RANGE(0x0400, 0x0400+100,&CyypaintView::OnUpdateCommd)
+    ON_COMMAND(ID_EDIT_UNDO, &CyypaintView::OnEditUndo)
+    ON_COMMAND(ID_EDIT_REDO, &CyypaintView::OnEditRedo)
 END_MESSAGE_MAP()
 
 // CyypaintView 构造/析构
@@ -155,4 +157,23 @@ LRESULT CyypaintView::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
         m_view->WindowProc(message, wParam, lParam);
     }
     return ret;
+}
+
+
+
+
+void CyypaintView::OnEditUndo()
+{
+    // TODO: 在此添加命令处理程序代码
+    m_view->WindowProc(WM_COMMAND, 0, ID_EDIT_UNDO);
+}
+
+
+
+
+
+void CyypaintView::OnEditRedo()
+{
+    // TODO: 在此添加命令处理程序代码
+    m_view->WindowProc(WM_COMMAND, 0, ID_EDIT_REDO);
 }

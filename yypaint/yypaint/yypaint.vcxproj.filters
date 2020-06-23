@@ -152,6 +152,10 @@
     <ClInclude Include="..\src\TMyView.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="IUndo.h" />
+    <ClInclude Include="TUndoList.h" />
+    <ClInclude Include="TUndo_CreateCell.h" />
+    <ClInclude Include="TUndo_EndDrag.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ChildFrm.cpp">
@@ -199,6 +203,10 @@
     <ClCompile Include="..\..\Tool_Rectangle\Tool_Rectangle\TTool_Rectangle.cpp">
       <Filter>other</Filter>
     </ClCompile>
+    <ClCompile Include="IUndo.cpp" />
+    <ClCompile Include="TUndoList.cpp" />
+    <ClCompile Include="TUndo_CreateCell.cpp" />
+    <ClCompile Include="TUndo_EndDrag.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="yypaint.rc">

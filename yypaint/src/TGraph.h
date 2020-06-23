@@ -2,9 +2,11 @@
 #include "IGraph.h"
 #include <list>
 #include <set>
+#include "TUndoList.h"
+#include "ICell.h"
 using namespace std;
 
-class TGraph: public IGraph
+class TGraph: public IGraph, public TUndoList
 {
 public:
     TGraph();
@@ -23,6 +25,7 @@ public:
     virtual void PreDragingSelectCell(int type);
     virtual void CancelDragingSelectCell(int type);
     virtual void DragingSelectCell(int oldX, int oldY, int x, int y, int type);
+    virtual void EndDragingSelectCell(int oldX, int oldY, int x, int y, int type);
 public:
     virtual void InsertSelectSet(ICell* cell);
     virtual void ClearSelectSet();
@@ -32,11 +35,16 @@ public:
     virtual ICell* GetNewCell();
     virtual void SetNewCell(ICell* cell);
     virtual void AddNewCell2Graph(ICell* cell);
+    virtual void EraseCellFromGraph(ICell* cell);
+public:
+    virtual void AddNewCell(ICell* cell);
+    virtual void  EraseCell(ICell* cell);
 private:
     void MyFree();
 protected:
-    typedef  list<ICell*> TCellLst;
+    typedef  set<ICell*, ICellOderLess> TCellLst;
     TCellLst m_CellList;
+
     typedef  set<ICell*> TCellSet;
     TCellSet  m_SelectLst;
     

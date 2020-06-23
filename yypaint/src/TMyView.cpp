@@ -36,6 +36,16 @@ LRESULT TMyView::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
                 }
                 pCmdUI->SetRadio(isRadio);
             }
+            else if(ID_EDIT_UNDO == lParam)
+            {
+                ClearSelectSet();
+                undo(this);
+            }
+            else if(ID_EDIT_REDO == lParam)
+            {
+                ClearSelectSet();
+                redo(this);
+            }
             else
             {
                 OnToolSelected(LOWORD(wParam));

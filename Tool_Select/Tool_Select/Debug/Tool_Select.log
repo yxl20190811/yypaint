@@ -1,21 +1,15 @@
-﻿生成启动时间为 2020/6/21 7:16:53。
-     1>项目“C:\git\yypaint\Tool_Select\Tool_Select\Tool_Select.vcxproj”在节点 2 上(rebuild 个目标)。
-     1>_PrepareForClean:
-         正在删除文件“Debug\Tool_Select.lastbuildstate”。
-       InitializeBuildStatus:
-         正在对“Debug\Tool_Select.unsuccessfulbuild”执行 Touch 任务。
+﻿生成启动时间为 2020/6/24 7:15:59。
+     1>项目“C:\git\yypaint\Tool_Select\Tool_Select\Tool_Select.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“Debug\Tool_Select.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../../include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _USRDLL /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\Tool_Select.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
-         stdafx.cpp
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../../include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _USRDLL /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Tool_Select.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt TCell_SelectRect.cpp Tool_Select.cpp TTool_Select.cpp
+         所有输出均为最新。
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I../../include /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _WINDOWS /D _DEBUG /D _USRDLL /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Tool_Select.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt TTool_Select.cpp
          TTool_Select.cpp
-         Tool_Select.cpp
-         TCell_SelectRect.cpp
-         正在生成代码...
        ResourceCompile:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /D _DEBUG /D _UNICODE /D UNICODE /l"0x0804" /IDebug\ /nologo /fo"Debug\Tool_Select.res" Tool_Select.rc 
+         所有输出均为最新。
        ManifestResourceCompile:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\Tool_Select.dll.embed.manifest.res" Debug\Tool_Select_manifest.rc 
+         所有输出均为最新。
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(990,5): warning MSB8012: TargetPath(C:\git\yypaint\Tool_Select\Tool_Select\../../output/tools/Tool_Select.dll) 与 Linker 的 OutputFile 属性值(C:\git\yypaint\output\tools\00_Tool_Select.dll)不匹配。这可能导致项目生成不正确。若要更正此问题，请确保 $(OutDir)、$(TargetName) 和 $(TargetExt) 属性值与 %(Link.OutputFile) 中指定的值匹配。
      1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(992,5): warning MSB8012: TargetName(Tool_Select) 与 Linker 的 OutputFile 属性值(00_Tool_Select)不匹配。这可能导致项目生成不正确。若要更正此问题，请确保 $(OutDir)、$(TargetName) 和 $(TargetExt) 属性值与 %(Link.OutputFile) 中指定的值匹配。
        Link:
@@ -25,24 +19,17 @@
          Debug\TCell_SelectRect.obj
          Debug\Tool_Select.obj
          Debug\TTool_Select.obj
-            正在创建库 ../../output/tools/Tool_Select.lib 和对象 ../../output/tools/Tool_Select.exp
        Manifest:
-         正在删除文件“Debug\Tool_Select.dll.embed.manifest”。
          C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\Tool_Select.dll.embed.manifest" /manifest Debug\Tool_Select.dll.intermediate.manifest "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\Include\Manifest\dpiaware.manifest"
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\Tool_Select.dll.embed.manifest.res" Debug\Tool_Select_manifest.rc 
+         所有输出均为最新。
        LinkEmbedManifest:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"../../output/tools/00_Tool_Select.dll" /INCREMENTAL /NOLOGO /DEF:".\Tool_Select.def" /MANIFEST /ManifestFile:"Debug\Tool_Select.dll.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\git\yypaint\output\tools\Tool_Select.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"../../output/tools/Tool_Select.lib" /MACHINE:X86 /DLL Debug\Tool_Select.res
-         Debug\Tool_Select.dll.embed.manifest.res
-         Debug\stdafx.obj
-         Debug\TCell_SelectRect.obj
-         Debug\Tool_Select.obj
-         Debug\TTool_Select.obj
+         所有输出均为最新。
          Tool_Select.vcxproj -> C:\git\yypaint\Tool_Select\Tool_Select\../../output/tools/Tool_Select.dll
        FinalizeBuildStatus:
          正在删除文件“Debug\Tool_Select.unsuccessfulbuild”。
          正在对“Debug\Tool_Select.lastbuildstate”执行 Touch 任务。
-     1>已完成生成项目“C:\git\yypaint\Tool_Select\Tool_Select\Tool_Select.vcxproj”(rebuild 个目标)的操作。
+     1>已完成生成项目“C:\git\yypaint\Tool_Select\Tool_Select\Tool_Select.vcxproj”(build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:03.60
+已用时间 00:00:00.49
