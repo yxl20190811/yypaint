@@ -15,7 +15,7 @@ protected: // 仅从序列化创建
 // 特性
 public:
 	CyypaintDoc* GetDocument() const;
-    TMyView  m_view;
+    TMyView*  m_view;
 // 操作
 public:
 

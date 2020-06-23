@@ -20,6 +20,11 @@ TTool_Rectangle::~TTool_Rectangle(void)
 {
 }
 
+ICell* TTool_Rectangle::CreateCell()
+{
+    return new TCell_Rectangle();
+}
+
 const char* TTool_Rectangle::GetUuid()
 {
     return "{D61F7D36-B72D-4161-B3D8-1E2596CFACFA}";

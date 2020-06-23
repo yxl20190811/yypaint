@@ -1,6 +1,8 @@
 #include "StdAfx.h"
 #include "TGraph.h"
 #include "ICell.h"
+#include "TLoadDll.h"
+#include "ITool.h"
 
 TGraph::TGraph()
 {
@@ -15,6 +17,7 @@ void TGraph::SetWnd(CWnd* wnd)
 
 TGraph::~TGraph(void)
 {
+    MyFree();
 }
 
 void TGraph::RePaint()
@@ -22,6 +25,20 @@ void TGraph::RePaint()
     m_wnd->Invalidate();
     m_IsInvalide = true;
 
+}
+
+void TGraph::MyFree()
+{
+     for(TCellLst::iterator it =  m_CellList.begin();
+        m_CellList.end() != it; ++it)
+    {
+        
+        delete (*it);
+    }
+     m_CellList.clear();
+     m_curDrawCell = NULL;
+     m_SelectLst.clear();
+     
 }
 
 void TGraph::DrawGrid(CDC* pDC)
@@ -184,4 +201,51 @@ void TGraph::AddNewCell2Graph(ICell* cell)
 ICell* TGraph::GetNewCell()
 {
     return m_curDrawCell;
+}
+
+void TGraph::Serialize(CArchive& ar)
+{
+    if (ar.IsStoring())
+	{
+        int size = m_CellList.size();
+        ar << size;
+        for(TCellLst::iterator it =  m_CellList.begin(); 
+            m_CellList.end() != it; ++it
+            )
+        {
+            (*it)->Serialize(ar); 
+            //ar << "\n";
+        }
+        
+		// TODO: 在此添加存储代码
+	}
+	else
+	{
+        MyFree();
+        CString id;
+        int size = 0;
+        ar >> size;
+        for(int i = 0; i < size; ++i)
+        {
+            ar >> id;
+            map<string, ITool*>::iterator it = TLoadDll::m_Uuid2Tool.find(id.GetBuffer());
+            if(TLoadDll::m_Uuid2Tool.end() == it)
+            {
+                //怎么办？
+                int size  = 0;
+                ar >> size;
+                ar.Read(NULL, size);
+
+            }
+            ITool* tool = it->second;
+            
+            ICell* cell = tool->CreateCell();
+            cell->Serialize(ar);
+            AddNewCell2Graph(cell);
+            //readline();
+
+        }
+        RePaint();
+		// TODO: 在此添加加载代码
+	}
 }

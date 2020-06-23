@@ -37,7 +37,7 @@ END_MESSAGE_MAP()
 CyypaintView::CyypaintView()
 {
 	// TODO: 在此处添加构造代码
-    m_view.SetWnd(this);
+    m_view = NULL;
 }
 
 CyypaintView::~CyypaintView()
@@ -133,19 +133,26 @@ CyypaintDoc* CyypaintView::GetDocument() const // 非调试版本是内联的
 
 void CyypaintView::OnCommd(UINT  id)
 {   
-    m_view.WindowProc(WM_COMMAND, id, 0);
+    m_view->WindowProc(WM_COMMAND, id, 0);
 }
 void CyypaintView::OnUpdateCommd(CCmdUI* p)
 {
-    m_view.WindowProc(WM_COMMAND, (DWORD)p, CN_UPDATE_COMMAND_UI);
+    m_view->WindowProc(WM_COMMAND, (DWORD)p, CN_UPDATE_COMMAND_UI);
 }
 
 LRESULT CyypaintView::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 {
     // TODO: 在此添加专用代码和/或调用基类
-    if(TRUE == m_view.WindowProc(message, wParam, lParam))
+    if(NULL != m_view && TRUE == m_view->WindowProc(message, wParam, lParam))
     {
         return TRUE;
     }
-    return CView::WindowProc(message, wParam, lParam);
+    BOOL ret = CView::WindowProc(message, wParam, lParam);
+    if(WM_CREATE == message)
+    {
+        m_view = &(GetDocument()->m_view);
+        m_view->SetWnd(this);
+        m_view->WindowProc(message, wParam, lParam);
+    }
+    return ret;
 }

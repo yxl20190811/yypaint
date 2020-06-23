@@ -2,6 +2,8 @@
 #include <Windows.h>
 
 class IGraph;
+class ICell;
+
 class ITool
 {
 public:
@@ -10,6 +12,7 @@ public:
 public:
     virtual LRESULT WindowProc(IGraph* graph, UINT message, WPARAM wParam, LPARAM lParam){return FALSE;};
     virtual void cancelSelected(IGraph* graph){};
+    virtual ICell* CreateCell(){return NULL;};
 public:
     int GetMsgId(){return m_MsgId;}
     void SetMsgId(int MsgId){m_MsgId = MsgId;}

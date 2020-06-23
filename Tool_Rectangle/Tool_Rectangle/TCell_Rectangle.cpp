@@ -317,6 +317,30 @@ void TCell_Rectangle::ResetCenterPoint()
     m_centerPoint.y = y;
 }
 
+void TCell_Rectangle::Serialize(CArchive& ar)
+{
+    if(ar.IsStoring())
+    {
+        ar << CString("{D61F7D36-B72D-4161-B3D8-1E2596CFACFA}");
+        int size = sizeof(TCell_Rectangle);
+        ar << size-sizeof(int);
+        ar.Write((char*)this+sizeof(int), size-sizeof(int));
+        //ar << m_rotAngle << m_x1 << m_y1 << m_x1 << m_y2 << m_centerPoint;
+    }
+    else
+    {
+        int size = 0;
+        ar >> size;
+        if(size+sizeof(int) != sizeof(TCell_Rectangle))
+        {
+            abort();
+        }
+        ar.Read((char*)this+sizeof(int), size);
+        //ar >> size >> m_rotAngle >> m_x1 >> m_y1 << m_x1 >> m_y2 >> m_centerPoint;
+    }
+}
+
+
 void TCell_Rectangle::DragingCell(int oldX, int oldY, int x, int y, int type)
 {
     

@@ -18,6 +18,7 @@ public:
     virtual void OverHotTest(int x, int y,
         int& type, ICell*& cell, HCURSOR* curor);
 public:
+    virtual void Serialize(CArchive& ar);
     virtual void SelectByRect(int x1, int y1, int x2, int y2);
     virtual void PreDragingSelectCell(int type);
     virtual void CancelDragingSelectCell(int type);
@@ -31,6 +32,8 @@ public:
     virtual ICell* GetNewCell();
     virtual void SetNewCell(ICell* cell);
     virtual void AddNewCell2Graph(ICell* cell);
+private:
+    void MyFree();
 protected:
     typedef  list<ICell*> TCellLst;
     TCellLst m_CellList;
@@ -46,6 +49,5 @@ protected:
 private:
     void RealonPaint(CDC& dc);
     void DrawGrid(CDC* pDC);
-
 };
 

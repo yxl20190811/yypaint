@@ -9,9 +9,9 @@ class TCell_Rectangle: public ICell
 private:
     float m_rotAngle;
     int m_x1, m_y1, m_x2, m_y2;
-    int m_OldX1, m_OldY1, m_OldX2, m_OldY2;
-
     CPoint m_centerPoint;
+private:
+    int m_OldX1, m_OldY1, m_OldX2, m_OldY2;
 public:
     void MoveCell(int x, int y){m_x2 = x;m_y2 = y;}
     virtual void DragingCell(int oldX, int oldY, int x, int y, int type);
@@ -21,6 +21,7 @@ public:
     int GetWidth(){return abs(m_x2 - m_x1);}
     int GetHeight(){return abs(m_y2 - m_y1);}
 public:
+    virtual void Serialize(CArchive& ar);
     virtual void OnPaint(CDC& dc);
     virtual void OnPaintSelect(CDC& dc);
 public:

@@ -24,6 +24,7 @@ public:
     }
     virtual ~ICell(void){}
 public:
+    virtual void Serialize(CArchive& ar){};
     virtual void OnPaint(CDC& dc){};
     virtual void OnPaintSelect(CDC& dc){};
 public:

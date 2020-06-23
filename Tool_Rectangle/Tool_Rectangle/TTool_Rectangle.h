@@ -12,6 +12,7 @@ public:
 public:
     virtual LRESULT WindowProc(IGraph* graph, UINT message, WPARAM wParam, LPARAM lParam);
     virtual void cancelSelected(IGraph* graph);
+    virtual ICell* CreateCell();
 private:
     void OnLButtonDown(IGraph* graph, int x, int y);
     void OnLButtonUp(IGraph* graph, int x, int y);

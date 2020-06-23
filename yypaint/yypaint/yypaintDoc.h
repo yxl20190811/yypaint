@@ -4,7 +4,7 @@
 
 
 #pragma once
-
+#include "TMyView.h"
 
 class CyypaintDoc : public CDocument
 {
@@ -14,7 +14,7 @@ protected: // 仅从序列化创建
 
 // 特性
 public:
-
+    TMyView  m_view;
 // 操作
 public:
 

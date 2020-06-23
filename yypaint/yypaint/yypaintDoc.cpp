@@ -7,6 +7,7 @@
 // ATL 项目中进行定义，并允许与该项目共享文档代码。
 #ifndef SHARED_HANDLERS
 #include "yypaint.h"
+#include <string>
 #endif
 
 #include "yypaintDoc.h"
@@ -55,6 +56,7 @@ BOOL CyypaintDoc::OnNewDocument()
 
 void CyypaintDoc::Serialize(CArchive& ar)
 {
+    m_view.Serialize(ar);
 	if (ar.IsStoring())
 	{
 		// TODO: 在此添加存储代码
