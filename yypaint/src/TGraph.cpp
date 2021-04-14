@@ -197,6 +197,9 @@ void TGraph::SetNewCell(ICell* cell)
 
 void TGraph::AddNewCell(ICell* cell)
 {
+    static int OrderId = 0;
+    ++OrderId;
+    cell->m_order = OrderId;
     m_CellList.insert(cell);
     m_curDrawCell = NULL;
 }

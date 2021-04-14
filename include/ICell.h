@@ -18,10 +18,9 @@ class ICell
 public:
     ICell()
     {
-        static int MsgId = 1;
-        ++MsgId;
-        m_order = MsgId;
+        m_order = 0;
     }
+    const ICell& operator=(const ICell& obj){return obj;}
     virtual ~ICell(void){}
 public:
     virtual void Serialize(CArchive& ar){};
@@ -37,8 +36,8 @@ public:
     virtual void CancelDragingCell(int type){};
 private:
     int m_order;
-
     friend class ICellOderLess;
+    friend class TGraph;
 };
 
 class ICellOderLess
