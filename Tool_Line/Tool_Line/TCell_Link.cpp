@@ -18,6 +18,28 @@ TCell_Link::TCell_Link(void)
 TCell_Link::~TCell_Link(void)
 {
 }
+void TCell_Link::Serialize(CArchive& ar)
+{
+    if(ar.IsStoring())
+    {
+        ar << CString("{348E6D46-9E63-4C27-8242-9AEB88818566}");
+        int size = sizeof(TCell_Link);
+        ar << size-sizeof(int);
+        ar.Write((char*)this+sizeof(int), size-sizeof(int));
+        //ar << m_rotAngle << m_x1 << m_y1 << m_x1 << m_y2 << m_centerPoint;
+    }
+    else
+    {
+        int size = 0;
+        ar >> size;
+        if(size+sizeof(int) != sizeof(TCell_Link))
+        {
+            abort();
+        }
+        ar.Read((char*)this+sizeof(int), size);
+        //ar >> size >> m_rotAngle >> m_x1 >> m_y1 << m_x1 >> m_y2 >> m_centerPoint;
+    }
+}
 
 void TCell_Link::OnPaint(CDC& dc)
 {
