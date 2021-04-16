@@ -24,7 +24,7 @@ void TUndo_EndDrag::undo(TGraph* graph)
     {
         ICell* cell =  *it;
         cell->PreDragingCell(m_type);
-        cell->DragingCell(m_x, m_y, m_OldX, m_OldY, m_type);
+        cell->DragingCell((IGraph*)graph, m_x, m_y, m_OldX, m_OldY, m_type);
     }
 }
 
@@ -36,6 +36,6 @@ void TUndo_EndDrag::redo(TGraph* graph)
     {
         ICell* cell =  *it;
         cell->PreDragingCell(m_type);
-        cell->DragingCell(m_OldX, m_OldY, m_x, m_y, m_type);
+        cell->DragingCell((IGraph*)graph, m_OldX, m_OldY, m_x, m_y, m_type);
     }
 }

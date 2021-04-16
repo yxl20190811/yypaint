@@ -20,7 +20,7 @@ TTool_Link::~TTool_Link(void)
 }
 const char* TTool_Link::GetUuid()
 {
-    return "{348E6D46-9E63-4C27-8242-9AEB88818566}";
+    return "{9164BE73-BAC9-41E3-9737-34EDE9554152}";
 }
 
 HICON TTool_Link::GetIcon()
@@ -35,6 +35,7 @@ ICell* TTool_Link::CreateCell()
 void TTool_Link::cancelSelected(IGraph* graph)
 {
 }
+
 LRESULT TTool_Link::WindowProc(IGraph* graph, UINT message, WPARAM wParam, LPARAM lParam)
 {
        switch(message)
@@ -71,8 +72,8 @@ void TTool_Link::OnLButtonDown(IGraph* graph, int x, int y)
 {
     graph->ClearSelectSet();
     //设置鼠标形状为十字
-    m_curCursor = LoadCursor(NULL, IDC_CROSS);
-    SetCursor(m_curCursor);
+    //m_curCursor = LoadCursor(NULL, IDC_CROSS);
+    //SetCursor(m_curCursor);
     //主抓鼠标，是的鼠标移动到窗口外还可以得到消息
     //view->m_wnd->SetCapture();
     //添加临时的矩形

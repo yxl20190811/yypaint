@@ -186,7 +186,7 @@ void TGraph::DragingSelectCell(int oldX, int oldY, int x, int y, int type)
     for(TCellSet::iterator it = m_SelectLst.begin();
         m_SelectLst.end() != it; ++it)
     {
-        (*it)->DragingCell(oldX, oldY, x, y, type);
+        (*it)->DragingCell(this,oldX, oldY, x, y, type);
      }
 }
 

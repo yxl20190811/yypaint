@@ -341,7 +341,7 @@ void TCell_Rectangle::Serialize(CArchive& ar)
 }
 
 
-void TCell_Rectangle::DragingCell(int oldX, int oldY, int x, int y, int type)
+void TCell_Rectangle::DragingCell(IGraph*, int oldX, int oldY, int x, int y, int type)
 {
     
     switch(type)

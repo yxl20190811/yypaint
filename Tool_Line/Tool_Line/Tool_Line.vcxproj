@@ -14,6 +14,7 @@
     <ProjectGuid>{E87216D6-FA50-4BFB-B988-B5BD8FBC0E98}</ProjectGuid>
     <RootNamespace>Tool_Line</RootNamespace>
     <Keyword>MFCDLLProj</Keyword>
+    <ProjectName>Tool_Line</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -42,6 +43,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>../../output/tools</OutDir>
+    <TargetName>Tool_Line</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>

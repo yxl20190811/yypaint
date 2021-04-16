@@ -1,6 +1,7 @@
 #pragma once
 #include "ICell.h"
 
+class IGraph;
 
 extern HCURSOR curorRatale;
 
@@ -13,8 +14,11 @@ private:
 private:
     int m_OldX1, m_OldY1, m_OldX2, m_OldY2;
 public:
+    virtual bool IsCanBeLink(){return true;}
+    virtual void GetCanBeLinkPos(int& x, int & y){x = m_x1; y = m_y1;}
+public:
     void MoveCell(int x, int y){m_x2 = x;m_y2 = y;}
-    virtual void DragingCell(int oldX, int oldY, int x, int y, int type);
+    virtual void DragingCell(IGraph*, int oldX, int oldY, int x, int y, int type);
 public:
     const TCell_Rectangle& operator=(const TCell_Rectangle& obj);
     void InitRect(int x1, int y1, int x2, int y2){m_x1 = x1;m_y1 = y1;m_x2 = x2;m_y2 = y2;}
