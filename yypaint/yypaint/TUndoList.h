@@ -11,11 +11,11 @@ public:
     TUndoList(void);
     ~TUndoList(void);
 public:
-    void AddUndo(IUndo* undo);
+    void AddUndo(list<IUndo*>& undo);
     void undo(TGraph* graph);
     void redo(TGraph* graph);
 private:
-    list<IUndo*>  m_UndoLst;
-    list<IUndo*>  m_RedoLst;
+    list<list<IUndo*>>  m_UndoLst;
+    list<list<IUndo*>>  m_RedoLst;
 };
 

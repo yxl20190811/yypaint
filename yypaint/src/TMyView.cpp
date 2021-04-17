@@ -56,6 +56,12 @@ LRESULT TMyView::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
         case WM_PAINT:
             TGraph::OnPaint();
             break;
+        case WM_KEYDOWN:
+            if(wParam == 46)
+            {
+                DelSelect();
+                break;
+            }
         default:
             if(NULL != m_curTool)
             {

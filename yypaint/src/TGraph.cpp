@@ -109,6 +109,7 @@ void TGraph::InsertSelectSet(ICell* cell)
 void TGraph::ClearSelectSet()
 {
     m_SelectLst.clear();
+    m_curDrawCell = NULL;
 }
 void TGraph::EraseSelectSet(ICell* cell)
 {
@@ -211,12 +212,30 @@ void  TGraph::EraseCell(ICell* cell)
 void TGraph::AddNewCell2Graph(ICell* cell)
 {
     AddNewCell(cell);
-    AddUndo(new TUndo_CreateCell(cell, true));
+    list<IUndo*> lst;
+    lst.push_back(new TUndo_CreateCell(cell, true));
+    AddUndo(lst);
 }
 void TGraph::EraseCellFromGraph(ICell* cell)
 {
     EraseCell(cell);
-    AddUndo(new TUndo_CreateCell(cell, false));
+    list<IUndo*> lst;
+    lst.push_back(new TUndo_CreateCell(cell, false));
+    AddUndo(lst);
+}
+
+void TGraph::DelSelect()
+{
+    list<IUndo*> lst;
+    for(TCellSet::iterator it = m_SelectLst.begin(); m_SelectLst.end() != it; ++it)
+    {
+        EraseCell(*it);
+        lst.push_back(new TUndo_CreateCell(*it, false));
+    }
+    AddUndo(lst);
+
+    ClearSelectSet();
+    RePaint();
 }
 
 ICell* TGraph::GetNewCell()
@@ -273,5 +292,11 @@ void TGraph::Serialize(CArchive& ar)
 
 void TGraph::EndDragingSelectCell(int oldX, int oldY, int x, int y, int type)
 {
-    AddUndo(new TUndo_EndDrag(m_SelectLst, oldX, oldY, x, y, type));
+    if(oldX == x && oldY == y)
+    {
+        return;
+    }
+    list<IUndo*> lst;
+    lst.push_back(new TUndo_EndDrag(m_SelectLst, oldX, oldY, x, y, type));
+    AddUndo(lst);
 }

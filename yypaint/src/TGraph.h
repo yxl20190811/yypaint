@@ -39,6 +39,7 @@ public:
 public:
     virtual void AddNewCell(ICell* cell);
     virtual void  EraseCell(ICell* cell);
+    virtual void DelSelect();
 private:
     void MyFree();
 protected:
